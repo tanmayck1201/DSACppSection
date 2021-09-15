@@ -40,9 +40,9 @@ T DemoT<T>::sub()
 int main()
 {
     DemoT<int> ar(10, 5);
-    cout << ar.add()<<endl;
+    cout << ar.add() << endl;
     DemoT<float> ar1(10.5, 5.4);
-    cout << ar1.sub()<<endl;
+    cout << ar1.sub() << endl;
 
     return 0;
 }
