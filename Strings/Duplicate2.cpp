@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+// call by value passing!
+// For call by reference- pass as (string &str).
 void duplicate(int H[], string str){
     // Traverse the string & incr. array index with no. of times element appeared.
     for (int i = 0; str[i] != '\0'; i++)
