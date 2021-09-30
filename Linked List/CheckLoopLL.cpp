@@ -10,8 +10,6 @@ public:
     void CreateLL(int *A, int n);
     void LoopCheck(Node *p);
     void DisplayLL(Node *ptr);
-    // Destructor
-    ~Node();
 };
 Node *first, *last = NULL;
 
@@ -71,17 +69,6 @@ void Node::LoopCheck(Node *p)
     }
 }*/
 
-// Destructor!
-Node::~Node(){
-    Node* p = first;
-    while (first)
-    {
-        first->next;
-        delete p;
-        p = first;
-    }
-    cout<<"Hii";
-}
 
 int main()
 {
