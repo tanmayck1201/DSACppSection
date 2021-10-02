@@ -1,9 +1,9 @@
 #include <iostream>
-
 using namespace std;
  
 template <class T>
-// Array pass by referrence
+// Function to print (sorted) array. 
+// Pass by referrence method used.
 void Print(T& vec, int n, string s){
     cout << s << ": [" << flush;
     for (int i=0; i<n; i++){
@@ -14,7 +14,8 @@ void Print(T& vec, int n, string s){
     }
     cout << "]" << endl;
 }
- 
+
+// Insertion sort logic/algo. 
 void InsertionSort(int A[], int n){
     for (int i=1; i<n; i++){
         int j = i-1;
@@ -29,8 +30,10 @@ void InsertionSort(int A[], int n){
  
 int main() {
  
-    int *A,n;
-    A = new int[15];
+    int *A,n,s;
+    cout<<"Enter the size of an array: "<<endl;
+    cin>>s;
+    A = new int[s];
     cout<<"Enter the no. of elements to enter: ";
     cin>>n;
     cout<<"Enter the elements: "<<endl;
