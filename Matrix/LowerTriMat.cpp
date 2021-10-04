@@ -17,7 +17,7 @@ public:
  
 LowerTriMat::LowerTriMat(int n)
 {
-    A = new int((n*(n+1))/2); 
+    A = new int(n*(n+1)/2); 
     this->n=n; //changes
  
     cout<<"Enter the elements: "<<endl;
