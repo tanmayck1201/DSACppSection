@@ -27,7 +27,7 @@ public:
 
 CircularLL ::CircularLL(int *A, int n)
 {
-    Node *t, *tail;
+    Node *t;
     head = new Node;
     head->data = A[0];
     head->next = head;
