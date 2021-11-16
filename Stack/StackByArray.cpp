@@ -12,10 +12,10 @@ private:
 public:
     stack();
     void push(int x);
-    int pop(stack *st);
-    int peek(stack st, int pos);
-    int stacktop(stack st);
-    void display(stack st);
+    int pop();
+    int peek(int pos);
+    int stacktop();
+    void display();
     /*~stack()
     {
         delete[] s;
@@ -56,61 +56,61 @@ void stack::push(int x)
     }
 }
 
-int stack::pop(stack *st)
+int stack::pop()
 {
     int x = -1;
-    if (st->top == -1)
+    if (top == -1)
     {
         cout << "Stack Underflow!!";
     }
     else
     {
-        x = st->s[st->top];
-        st->top--;
+        x = s[top];
+        top--;
     }
     return x;
 }
 
-int stack::peek(stack st, int pos)
+int stack::peek(int pos)
 {
     int x = -1;
-    if ((st.top - pos + 1) == -1)
+    if ((top - pos + 1) == -1)
     {
         cout << "Invalid Index!!";
     }
     else
     {
-        x = st.s[st.top - pos + 1];
+        x = s[top - pos + 1];
     }
     return x;
 }
 
-int stack::stacktop(stack st)
+int stack::stacktop()
 {
     int x = -1;
-    if (st.top == -1)
+    if (top == -1)
     {
         cout << "Stack is empty";
     }
     else
     {
-        x = st.s[st.top];
+        x = s[top];
     }
     return x;
 }
 
-void stack::display(stack st)
+void stack::display()
 {
-    if (st.top == -1)
+    if (top == -1)
     {
         cout << "Stack is empty!" << endl;
     }
     else
     {
         cout << "The stack elements are: " << endl;
-        for (int i = 0; i <= st.top; i++)
+        for (int i = 0; i <= top; i++)
         {
-            cout << st.s[i] << endl;
+            cout << s[i] << endl;
         }
     }
 }
@@ -141,21 +141,21 @@ int main()
             break;
 
         case 2:
-            cout << "The deleted element is: " << st.pop(&st) << endl;
+            cout << "The deleted element is: " << st.pop() << endl;
             break;
 
         case 3:
             cout << "Enter the position of element: ";
             cin >> pos;
-            cout << "The element at position " << pos << " is: " << st.peek(st, pos) << endl;
+            cout << "The element at position " << pos << " is: " << st.peek(pos) << endl;
             break;
 
         case 4:
-            cout << "The topmost element is: " << st.stacktop(st) << endl;
+            cout << "The topmost element is: " << st.stacktop() << endl;
             break;
 
         case 5:
-            st.display(st);
+            st.display();
             break;
 
         case 6:
