@@ -15,7 +15,8 @@ public:
     bool IsFull();
     char stacktop();
     int IsOperand(char x);
-    int Precedence(char x);
+    int Outpre(char x);
+    int Inpre(char x);
     char *ConvertToPostfix(char *infix);
 };
 
@@ -93,7 +94,7 @@ char stack::stacktop()
 // Check if character is operand or not!
 int stack::IsOperand(char x)
 {
-    if (x == '+' || x == '-' || x == '*' || x == '/')
+    if (x == '+' || x == '-' || x == '*' || x == '/' || x == '^' || x == '(' || x == ')')
     {
         return 0;
     }
@@ -103,8 +104,8 @@ int stack::IsOperand(char x)
     }
 }
 
-// Deciding precedence of operators.
-int stack::Precedence(char x)
+// Deciding precedence of operators before going into stack.
+int stack::Outpre(char x)
 {
     if (x == '+' || x == '-')
     {
@@ -112,13 +113,43 @@ int stack::Precedence(char x)
     }
     else if (x == '*' || x == '/')
     {
-        return 2;
+        return 3;
     }
     else if (x == '^')
     {
-        return 3;
+        return 6;
     }
-    return 0;
+    else if (x == '(')
+    {
+        return 7;
+    }
+    else if (x == ')')
+    {
+        return 0;
+    }
+    return -1;
+}
+
+// Deciding precedence of operators after plcing into stack.
+int stack::Inpre(char x)
+{
+    if (x == '+' || x == '-')
+    {
+        return 2;
+    }
+    else if (x == '*' || x == '/')
+    {
+        return 4;
+    }
+    else if (x == '^')
+    {
+        return 5;
+    }
+    else if (x == '(')
+    {
+        return 0;
+    }
+    return -1;
 }
 
 char *stack::ConvertToPostfix(char *infix)
@@ -137,14 +168,25 @@ char *stack::ConvertToPostfix(char *infix)
         else
         {
             // If operator precedence is greater than existing top then push!
-            if (Precedence(infix[i]) > Precedence(s[top]))
+            if (Outpre(infix[i]) > Inpre(s[top]))
             {
                 push(infix[i++]);
             }
             // if its reverse then pop out element & insert in postfix array.
             else
             {
-                postfix[j++] = pop();
+                char c = pop();
+                // If any bracket don't insert to postfix, incr. infix array & continue!
+                if (c == '(')
+                {
+                    i++;
+                    continue;
+                }
+                // else push.
+                else
+                {
+                    postfix[j++] = c;
+                }
             }
         }
     }
