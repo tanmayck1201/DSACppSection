@@ -1,4 +1,4 @@
-// Simple Queue with all operations having O(1) time!
+// Circular Queue with all operations having O(1) time!
 #include <iostream>
 using namespace std;
 

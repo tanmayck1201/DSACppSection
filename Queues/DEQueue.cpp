@@ -1,4 +1,4 @@
-// Simple Queue with all operations having O(1) time!
+// DEQueue Queue with all operations having O(1) time!
 #include <iostream>
 using namespace std;
 
