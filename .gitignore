@@ -37,3 +37,5 @@ Queues/QbyLL.exe
 Queues/CircularQ.exe
 Trees/IterativeTraversals.exe
 Trees/CreateBT.exe
+Trees/HeightnCount.exe
+Trees/TreeFromTraversals.exe

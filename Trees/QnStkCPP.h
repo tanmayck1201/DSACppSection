@@ -9,7 +9,16 @@ public:
     Node *lchild;
     int data;
     Node *rchild;
+    Node(){};
+    Node(int data);
 };
+
+Node::Node(int data)
+{
+    lchild = nullptr;
+    this->data = data;
+    rchild = nullptr;
+}
 
 // Queue implementation for BT creation & Level order traversal
 class Queue
