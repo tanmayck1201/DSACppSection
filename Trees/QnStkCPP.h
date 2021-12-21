@@ -84,6 +84,7 @@ public:
     stack(int size);
     void push(T x);
     T pop();
+    T stacktop();
     int IsEmpty()
     {
         if (top == -1)
@@ -96,6 +97,7 @@ template <class T>
 stack<T>::stack(int size)
 {
     top = -1;
+    this->size = size;
     s = new T[size];
 }
 
@@ -125,6 +127,21 @@ T stack<T>::pop()
     {
         x = s[top];
         top--;
+    }
+    return x;
+}
+
+template <class T>
+T stack<T>::stacktop()
+{
+    T x = 0;
+    if (top == -1)
+    {
+        ;
+    }
+    else
+    {
+        x = s[top];
     }
     return x;
 }

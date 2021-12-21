@@ -39,3 +39,6 @@ Trees/IterativeTraversals.exe
 Trees/CreateBT.exe
 Trees/HeightnCount.exe
 Trees/TreeFromTraversals.exe
+Trees/BST.exe
+Trees/DeleteBST.exe
+Trees/BSTFromPreorder.exe
