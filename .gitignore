@@ -49,3 +49,5 @@ Heap/CreateHeap.exe
 Heap/InsertInHeap.exe
 Heap/DeleteHeap.exe
 Heap/Heapify.exe
+Graphs/GraphRepresentation.exe
+Graphs/GraphTraversals.exe
