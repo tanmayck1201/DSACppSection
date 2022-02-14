@@ -13,6 +13,7 @@ public:
     Node1 **Create(int vertices);
     void Place(Node1 **adj, int x, int y);
     void BFS(Node1 **G, int start, int n);
+    void DFS(Node1 **G, int start, int n);
 };
 
 // Creating array of pointers of type node.(Another method for double pointer!)
@@ -91,6 +92,38 @@ void Node1::BFS(Node1 **G, int start, int n)
     }
 }
 
+void Node1::DFS(Node1 **G, int start, int n)
+{
+    int u = start;
+    int *visited = new int[n];
+    for (int i = 0; i <= n; i++)
+    {
+        visited[i] = 0;
+    }
+    stack<int> stk(15);
+    stk.push(u);
+
+    while (!stk.IsEmpty())
+    {
+        u = stk.stacktop();
+        stk.pop();
+        Node1 *p = G[u];
+        // condition will execute for those vertexes
+        // who have not done till now
+        while (p)
+        {
+            if (visited[p->data] != 1)
+            {
+                cout << u << " ";
+                visited[u] = 1;
+                stk.push(p->data);
+                break;
+            }
+            p = p->next;
+        }
+    }
+}
+
 int main()
 {
     Node1 N;
@@ -110,14 +143,14 @@ int main()
         N.Place(G, x, y);
     }
 
-    cout << "How many BFS traversals? ";
+    cout << "How many DFS traversals? ";
     cin >> t;
     while (t--)
     {
         cout << "Enter the starting vertex: ";
         int start;
         cin >> start;
-        N.BFS(G, start, n);
+        N.DFS(G, start, n);
         cout << endl;
     }
 
