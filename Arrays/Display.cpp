@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 void Display(struct Array arr);
@@ -14,18 +14,18 @@ int main()
 {
     int n;
     struct Array arr;
-    cout<<"Enter size of an array: ";
-    cin>>arr.size;
+    cout << "Enter size of an array: ";
+    cin >> arr.size;
     arr.A = new int[arr.size];
     arr.l = 0;
 
-    cout<<"Enter no. of elements to enter: ";
-    cin>>n;
+    cout << "Enter no. of elements to enter: ";
+    cin >> n;
 
-    cout<<"Enter the elements: ";
+    cout << "Enter the elements: ";
     for (int i = 0; i < n; i++)
     {
-            cin>>arr.A[i];
+        cin >> arr.A[i];
     }
     arr.l = n;
 
@@ -36,9 +36,9 @@ int main()
 
 void Display(struct Array arr)
 {
-    cout<<"The array elements are: \n";
+    cout << "The array elements are: \n";
     for (int i = 0; i < arr.l; i++)
     {
-        cout<<arr.A[i]<<endl;
+        cout << arr.A[i] << endl;
     }
 }
