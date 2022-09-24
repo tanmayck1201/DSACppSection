@@ -92,7 +92,7 @@ void Queue::display()
     if (!IsEmpty())
     {
         cout << "Queue elements are: " << endl;
-        for (int i = (front + 1); i <= rear; i++)
+        for (int i = (front+1); i <= rear; i++)
         {
             cout << Q[i] << " ";
         }

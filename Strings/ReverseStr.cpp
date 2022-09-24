@@ -12,6 +12,10 @@ int main()
     for(j=0; s[j]!='\0'; j++);
     
     j -= 1;
+
+    // OR string size calc.
+    // j = s.size()-1;
+
     for (i = 0; i < j; i++, j--)
     {
         swap(s[i], s[j]);
